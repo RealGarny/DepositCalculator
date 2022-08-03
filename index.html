@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/assets/air-datepicker-3/dist/air-datepicker.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deposit calculator</title>
+</head>
+<body>
+    <div class="header">
+        <div class="header__inner">
+            <div class="header__logo">
+                <img src="assets/logo-light 1.svg" alt="">
+            </div>
+            <div class="header__text">
+                Deposit Calculator
+            </div>
+        </div>
+    </div>
+    <div class="content" id="content">
+        <div class="intro">
+            <div class="intro__inner">
+                <div class="intro__title">Депозитный калькулятор</div>
+                <div class="intro__subtitle">Калькулятор депозитов позволяет рассчитать ваши доходы после внесения суммы на счет в банке по опредленному тарифу.</div>
+            </div>
+        </div>
+        <div class="inputs">
+            <form id="mainForm">
+                <div class="container-1">
+                    <div class="inputs__inner">
+                        <input type="text" id="inputs__DateOfOpenning" name="date" class="inputs__input datepicker-here"  placeholder=" " autocomplete="off" required>
+                        <label class="inputs__label" for="inputs__DateOfOpenning">Дата открытия</label>
+                        <div class="errorDate"></div>
+                    </div>
+                    <div class="inputs__inner">
+                        <input id="inputs__DepositTerm" class="inputs__input" name="time" type="number" autocomplete="off" placeholder=" " pattern="^[ 0-9]+$" required>
+                        <label class="inputs__label" for="inputs__DepositTerm">Срок вклада</label>
+                        <div class="errorTime"></div>
+
+                        <div class="DepositTerm__select">
+                            <select name="select-term" class="select__term">
+                                <option value="month">месяц</option>
+                                <option value="year">год</option>
+                            </select>
+                            <img src="assets/Arrow 1.svg" alt="" class="select__term__arrow">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-2">
+                    <div class="inputs__inner">
+                        <input id="inputs__DepositAmount" class="inputs__input" name="value" type="number" autocomplete="off" placeholder=" "pattern="^[ 0-9]+$" required>
+                        <label class="inputs__label" for="inputs__DepositAmount">Сумма вклада</label>
+                        <div class="errorValue"></div>
+                    </div>
+                    <div class="inputs__inner">
+                        <input id="inputs__InterestRate" class="inputs__input" name="percent" type="number" autocomplete="off" placeholder=" " pattern="^[ 0-9]+$" required>
+                        <label class="inputs__label">Процентная ставка, % годовых</label>
+                        <div class="errorPercent"></div>
+                    </div>
+                </div>
+                
+                <div class="container-3">
+                    <div class="inputs__checkbox">
+                        <input type="checkbox" class="inputs__MonthlyDepositReplenishment" id="check"  autocomplete="off" required>
+                        <label  id="inputs__MonthlyDepositReplenishmentText" for="check">Ежемесячное пополнение вклада</label>
+                    </div>
+                    <div class="inputs__inner">
+                        <input type="number " id="inputs__DepositReplenishmentAmount" class="inputs__input hidden" name="replenishment" autocomplete="off" pattern="^[ 0-9]+$" placeholder=" " required>
+                        <label class="inputs__label hidden" for="inputs__DepositReplenishmentAmount">Сумма пополнения вклада</label>
+                        <div class="errorRepl"></div>
+                    </div>
+                </div>
+            </form>
+        </div> 
+        <div class="btn" id="button">Рассчитать</div>
+        <div class="result__wrapper">
+            <div class="result__line"></div>
+            <div class="calc__sum">Сумма к выплате</div>   
+            <div class="calc__result">&#8381<span class="mess-span"></span></div>
+        </div>
+    </div>
+</body>
+    <script src="assets/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="assets/air-datepicker-3/dist/air-datepicker.js"></script>
+    <script src="assets/air-datepicker-3/dist/main-datepicker.js"></script>
+    <script src="assets/node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="assets/node_modules/jquery-validation/dist/additional-methods.min.js"></script>
+    <script script src="script.js"></script> 
+</html>
